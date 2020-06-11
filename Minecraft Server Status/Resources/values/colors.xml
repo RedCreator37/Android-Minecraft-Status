@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2c3e50</color>
+    <color name="colorPrimaryDark">#1B3147</color>
+    <color name="colorStatusOk">#41c300</color>
+    <color name="colorStatusOkDark">#009100</color>
+    <color name="colorStatusPending">#fbc02d</color>
+    <color name="colorStatusPendingDark">#c49000</color>
+    <color name="colorStatusError">#ee6002</color>
+    <color name="colorStatusErrorDark">#b42e00</color>
+    <color name="colorAccent">#3498db</color>
+    <!--<color name="colorAccent">#03DAC5</color>-->
+</resources>
