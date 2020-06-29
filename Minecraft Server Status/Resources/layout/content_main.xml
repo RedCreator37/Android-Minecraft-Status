@@ -22,7 +22,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:src="@drawable/ic_texture_black_48dp"
-            android:contentDescription="Server Icon" />
+            android:contentDescription="@string/server_icon" />
         <Space
             android:layout_column="1"
             android:layout_row="0"
@@ -33,7 +33,7 @@
             android:layout_row="0"
             android:id="@+id/ServerMotd"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </GridLayout>
     <GridLayout
         android:layout_row="1"
@@ -45,7 +45,7 @@
         <TextView
             android:layout_row="0"
             android:layout_column="0"
-            android:text="Max players:"
+            android:text="@string/max_players"
             android:layout_width="90dp"
             android:layout_height="match_parent"
             android:id="@+id/textView2" />
@@ -60,9 +60,9 @@
         <TextView
             android:layout_row="0"
             android:layout_column="2"
-            android:text="    Online players:"
+            android:text="@string/online_players"
             android:layout_width="120dp"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
         <EditText
             android:inputType="text"
             android:layout_row="0"
@@ -82,9 +82,9 @@
         <TextView
             android:layout_row="0"
             android:layout_column="0"
-            android:text="Version:"
+            android:text="@string/version"
             android:layout_width="90dp"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
         <EditText
             android:inputType="text"
             android:layout_row="0"
@@ -101,7 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:max="100"
-        android:progress="100"/>
+        android:progress="100" />
     <GridLayout
         android:layout_row="4"
         android:layout_column="0"
@@ -112,9 +112,9 @@
         <TextView
             android:layout_row="0"
             android:layout_column="0"
-            android:text="Address:"
+            android:text="@string/address"
             android:layout_width="90dp"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
         <EditText
             android:inputType="text"
             android:layout_row="0"
@@ -123,7 +123,7 @@
             android:layout_height="match_parent"
             android:id="@+id/InputAddress"
             android:singleLine="true"
-            android:hint="play.example.org" />
+            android:hint="@string/example_address" />
     </GridLayout>
     <GridLayout
         android:layout_row="5"
@@ -135,19 +135,19 @@
         <TextView
             android:layout_row="0"
             android:layout_column="0"
-            android:text="Port:"
+            android:text="@string/port"
             android:layout_width="90dp"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
         <EditText
             android:layout_row="0"
             android:layout_column="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/InputPort"
-            android:hint="25565"
+            android:hint="@string/example_port"
             android:singleLine="true"
             android:inputType="none|number"
-            android:text="25565" />
+            android:text="@string/example_port" />
     </GridLayout>
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
@@ -169,23 +169,22 @@
             android:layout_height="match_parent"
             android:layout_column="0"
             android:layout_row="0"
-            android:text="Approximate   \nping time:"/>
+            android:text="@string/approx_ping_time" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="0"
-            android:text="\n0 ms"
+            android:text="@string/zero_ms_ping"
             android:textSize="16dp"
-            android:id="@+id/PingTimeLabel"
-            />
+            android:id="@+id/PingTimeLabel" />
         <Space
             android:layout_column="2"
             android:layout_row="0"
             android:layout_width="55dp"
             android:layout_height="20dp" />
         <Button
-            android:text="Connect"
+            android:text="@string/connect"
             android:minWidth="125dp"
             android:minHeight="50dp"
             android:layout_width="wrap_content"

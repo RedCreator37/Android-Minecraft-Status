@@ -3,4 +3,17 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_check_status">Check status</string>
+    <!-- used in content_main.xml -->
+    <string name="server_icon">Server Icon</string>
+    <string name="max_players">Max players:</string>
+    <string name="online_players">    Online players:</string>
+    <string name="version">Version:</string>
+    <string name="address">Address:</string>
+    <string name="port">Port:</string>
+    <string name="approx_ping_time">Approximate   \nping time:</string>
+    <string name="connect">Connect</string>
+    <!-- for placeholders -->
+    <string name="example_address">play.example.org</string>
+    <string name="example_port">25565</string>
+    <string name="zero_ms_ping">\n0 ms</string>
 </resources>
