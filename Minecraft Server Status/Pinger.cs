@@ -81,8 +81,10 @@ namespace Minecraft_Server_Status {
             motdBox.LoadData(html, "text/html; charset=utf-8", "UTF-8");
 
             _view.FindViewById<Button>(Resource.Id.PingButton).Enabled = true;
-            // todo: display this value
-            // PingValueLabel.Text = _latency.ElapsedMilliseconds + Resources.Ms_Tag;
+
+            // sets the ping time label (the '\n' is a hack to get it to align properly)
+            _view.FindViewById<TextView>(Resource.Id.PingTimeLabel)
+                .Text = "\n" + _latency.ElapsedMilliseconds + " ms";
             pingButton.Enabled = true;
             return true;
         }

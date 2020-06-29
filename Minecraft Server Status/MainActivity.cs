@@ -121,6 +121,7 @@ namespace Minecraft_Server_Status {
             FindViewById<EditText>(Id.ServerMaxPlayers).Text = "";
             FindViewById<EditText>(Id.ServerOnlinePlayers).Text = "";
             FindViewById<EditText>(Id.ServerVersion).Text = "";
+            FindViewById<TextView>(Id.PingTimeLabel).Text = "\n0 ms";
 
             // set the motd field initial text
             var motd = FindViewById<WebView>(Id.ServerMotd);
