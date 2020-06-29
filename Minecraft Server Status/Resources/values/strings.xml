@@ -16,4 +16,6 @@
     <string name="example_address">play.example.org</string>
     <string name="example_port">25565</string>
     <string name="zero_ms_ping">\n0 ms</string>
+    <!-- misc -->
+    <string name="about_page_text">Version 1.0\n2020 by RedCreator37\n\nUsing the MinecraftServerStatus library:\ngithub.com/sakamoto-poteko/MinecraftServerStatus</string>
 </resources>

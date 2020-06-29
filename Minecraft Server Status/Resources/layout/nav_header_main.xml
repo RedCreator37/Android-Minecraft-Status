@@ -14,6 +14,7 @@
 
     <ImageView
         android:src="@mipmap/ic_launcher_round"
+        android:contentDescription="@string/app_name"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/imageView1" />
@@ -22,13 +23,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Minecraft Server Status"
+        android:text="@string/app_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Version 1.0\n2020 by RedCreator37\n\nUsing the MinecraftServerStatus library:\ngithub.com/sakamoto-poteko/MinecraftServerStatus" />
+        android:text="@string/about_page_text" />
 
 </LinearLayout>
