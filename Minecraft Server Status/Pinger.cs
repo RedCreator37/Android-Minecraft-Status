@@ -41,7 +41,7 @@ namespace Minecraft_Server_Status {
         /// </summary>
         /// <returns>True if the server is reachable</returns>
         public bool Ping() {
-            // todo: set the busy status
+            // todo: don't block the UI thread while it's pinging
             var pingButton = _view.FindViewById<Button>(Resource.Id.PingButton);
             var motdBox = _view.FindViewById<WebView>(Resource.Id.ServerMotd);
             pingButton.Enabled = false;
@@ -64,7 +64,7 @@ namespace Minecraft_Server_Status {
                 var data = Convert.FromBase64String(_serverStatus.Favicon[22..]);
                 using var stream = new MemoryStream(data, 0, data.Length);
                 icon.SetImageBitmap(BitmapFactory.DecodeStream(stream));
-            } catch (Exception) { /* let it be blank then */ }
+            } catch (Exception) { /* invalid image; leave empty */ }
 
             string html;
             try {
