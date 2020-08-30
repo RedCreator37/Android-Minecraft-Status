@@ -61,9 +61,11 @@ namespace Minecraft_Server_Status {
             // the first 22 characters are cut off as they're not a part of the image
             try {
                 var icon = _view.FindViewById<ImageView>(Resource.Id.ServerIcon);
-                var data = Convert.FromBase64String(_serverStatus.Favicon[22..]);
-                using var stream = new MemoryStream(data, 0, data.Length);
-                icon.SetImageBitmap(BitmapFactory.DecodeStream(stream));
+                if (_serverStatus.Favicon.Length > 22) {
+                    var data = Convert.FromBase64String(_serverStatus.Favicon[22..]);
+                    using var stream = new MemoryStream(data, 0, data.Length);
+                    icon.SetImageBitmap(BitmapFactory.DecodeStream(stream));
+                }
             } catch (Exception) { /* invalid image; leave empty */ }
 
             string html;
