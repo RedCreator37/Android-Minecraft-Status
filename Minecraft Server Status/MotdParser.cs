@@ -4,26 +4,26 @@ namespace Minecraft_Server_Status {
     public static class MotdParser {
 
         /// <summary>
-        /// Parse the Minecraft Message-of-the-day format
+        /// Parses the Minecraft Message-of-the-day format
         /// </summary>
-        /// <param name="motd">Full motd with formatting codes</param>
-        /// <returns>Formatted html code of the motd</returns>
+        /// <param name="motd">The full motd with formatting codes</param>
+        /// <returns>Formatted html of the motd</returns>
         public static string ParseMotd(string motd) {
             var nextCode = false;
             var arr = motd.ToCharArray();
             var formatter = @"#FFFFFF";
 
-            var formatted = new StringBuilder();
-            formatted.Append("<html><body style=\"background-color:#2E2E2E;" +
+            var result = new StringBuilder();
+            result.Append("<html><body style=\"background-color:#2E2E2E;" +
                              "font-family:'monospace';font-size:14px;\">");
             for (var i = 0; i < motd.Length; i++)   // parse the '§' formatting codes
                 if (arr[i] == '§') nextCode = true;
                 else {
-                    if (!nextCode) {    // if it's actual text, not the formatting code
-                        if (arr[i] == '\n') formatted.Append("<br>");
+                    if (!nextCode) {    // if it's actual text, not a formatting code
+                        if (arr[i] == '\n') result.Append("<br>");
                         else {
                             if (formatter.Contains('#')) {
-                                formatted.Append("<font color = \"").Append(formatter)
+                                result.Append("<font color = \"").Append(formatter)
                                     .Append("\">").Append(arr[i]).Append("</font>");
                             } else {    // format the entire section, including line breaks
                                 var b = new StringBuilder();
@@ -34,25 +34,24 @@ namespace Minecraft_Server_Status {
                                 }
 
                                 i = j;
-                                formatted.Append(formatter.Replace("{text}",
+                                result.Append(formatter.Replace("{text}",
                                     b.ToString()));
                             }
                         }
                     } else formatter = GetFormatter(arr[i]);
                     nextCode = false;
                 }
-            formatted.Append("</body></html>");
-            return formatted.ToString();
+            result.Append("</body></html>");
+            return result.ToString();
         }
 
         /// <summary>
-        /// Get the matching formatter from a Minecraft hex
-        /// formatting code
+        /// Returns the matching formatter for a Minecraft formatting hex code
         /// </summary>
         /// <param name="code">A char with the code</param>
-        /// <returns>The matching color code (starting with an #) or
-        /// a formatted HTML string (replace {text} placeholder with
-        /// actual text)</returns>
+        /// <returns>The matching RGB color code (starting with a #) or a
+        /// formatted HTML string (with {text} being the placeholder for text
+        /// data)</returns>
         private static string GetFormatter(char code) {
             return char.ToLower(code) switch
             {
