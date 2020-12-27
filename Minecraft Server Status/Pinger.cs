@@ -50,8 +50,7 @@ namespace Minecraft_Server_Status {
             var status = Task.Factory.StartNew(Loop).Result.Result;
 
             if (!status.Equals("Success")) {
-                var error = @"<html><body><strong>Error: </strong>"
-                            + status + "</body></html>";
+                var error = $"<html><body><strong>Error: </strong>{status}</body></html>";
                 motdBox.LoadData(error, "text/html; charset=utf-8", "UTF-8");
                 pingButton.Enabled = true;
                 return false;

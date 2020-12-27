@@ -23,8 +23,7 @@ namespace Minecraft_Server_Status {
                         if (arr[i] == '\n') result.Append("<br>");
                         else {
                             if (formatter.Contains('#')) {
-                                result.Append("<font color = \"").Append(formatter)
-                                    .Append("\">").Append(arr[i]).Append("</font>");
+                                result.Append($"<font color=\"{formatter}\">{arr[i]}</font>");
                             } else {    // format the entire section, including line breaks
                                 var b = new StringBuilder();
                                 var j = i;
